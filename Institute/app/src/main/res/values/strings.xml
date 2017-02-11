@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Institute</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+<string name="country_prompt">Select Frequency</string>
+
+<string-array name="country_arrays">
+
+    <item>Once</item>
+    <item>Twice</item>
+    <item>Thrice</item>
+</string-array>
+
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "752231790710",
+    "firebase_url": "https://institute-54a14.firebaseio.com",
+    "project_id": "institute-54a14",
+    "storage_bucket": "institute-54a14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752231790710:android:30b97d59abbd5181",
+        "android_client_info": {
+          "package_name": "in.thegeekybaniya.institute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752231790710-0lac5rau53stmijl8ri7aehgk2b5j9am.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAffEF93KBTT4Nt9gdiV6PaBgB8BW193Fs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752231790710-0lac5rau53stmijl8ri7aehgk2b5j9am.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
