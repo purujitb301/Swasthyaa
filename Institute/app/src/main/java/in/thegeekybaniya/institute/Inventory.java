@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -33,8 +35,10 @@ public class Inventory extends Fragment {
         inventory.add(new InventoryPOJO("Heart", "Unit(s)", 6));
         inventory.add(new InventoryPOJO("Liver", "Unit(s)", 1));
 
+        lv= (ListView) view.findViewById(R.id.lv);
 
-
+        InventoryAdapter inAdp= new InventoryAdapter();
+        lv.setAdapter(inAdp);
 
 
         return view;
@@ -61,7 +65,73 @@ public class Inventory extends Fragment {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            return null;
+
+
+            LayoutInflater li= getActivity().getLayoutInflater();
+
+            final InventoryPOJO inventoryPOJO=(InventoryPOJO)getItem(i);
+
+            final InventoryHolder inHolder;
+
+            if(view == null) {
+
+                view = li.inflate(R.layout.inventory_display, null);
+
+                inHolder = new InventoryHolder();
+                inHolder.tvName = (TextView) view.findViewById(R.id.tvName);
+                inHolder.tvUnit = (TextView) view.findViewById(R.id.tvUnit);
+                inHolder.tvQty = (TextView) view.findViewById(R.id.tvQty);
+                inHolder.btnDec = (Button) view.findViewById(R.id.btnDec);
+                inHolder.btnInc = (Button) view.findViewById(R.id.btnInc);
+
+                view.setTag(inHolder);
+            }
+                else {
+                inHolder = (InventoryHolder) view.getTag();
+            }
+                    inHolder.tvName.setText( inventoryPOJO.getName());
+                    inHolder.tvUnit.setText(inventoryPOJO.getUnit());
+                    inHolder.tvQty.setText(Integer.toString(inventoryPOJO.getQty()));
+
+                    inHolder.btnInc.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            inHolder.tvQty.setText((Integer.toString(inventoryPOJO.getQty()+1)));
+
+                        }
+                    });
+
+            inHolder.btnDec.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    inHolder.tvQty.setText((Integer.toString(inventoryPOJO.getQty()-1)));
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            return view;
         }
+    }
+
+
+    private class InventoryHolder {
+        TextView tvName, tvUnit, tvQty;
+
+        Button btnInc, btnDec;
+
+
+
     }
 }

@@ -33,9 +33,11 @@ public class onAadharEntered extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Reports"));
-        tabLayout.addTab(tabLayout.newTab().setText("Chat"));
+        tabLayout.addTab(tabLayout.newTab().setText("Recent Checkups"));
+        tabLayout.addTab(tabLayout.newTab().setText("QnA"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        getSupportActionBar().setTitle("Your Medical History");
 
     }
 
@@ -94,9 +96,9 @@ public class onAadharEntered extends AppCompatActivity {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return "REPORT";
+                    return "RECENT CHECKUPS";
                 case 1:
-                    return "Chat";
+                    return "CHAT";
             }
             return null;
         }
